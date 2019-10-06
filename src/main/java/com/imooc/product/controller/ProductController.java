@@ -91,6 +91,6 @@ public class ProductController {
      */
     @GetMapping("/listForOrder")
     public List<ProductInfo> listForOrder(List<String> productIdList){
-        return null;
+        return productService.findList(productIdList);
     }
 }
