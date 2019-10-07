@@ -1,4 +1,4 @@
-package com.imooc.product.DTO;
+package com.imooc.product.dto;
 
 import lombok.Data;
 
@@ -13,6 +13,9 @@ public class CartDTO {
     private String productId;
     /**购买数量*/
     private Integer productQuantity;
+
+    public CartDTO() {
+    }
 
     public CartDTO(String productId, Integer productQuantity) {
         this.productId = productId;

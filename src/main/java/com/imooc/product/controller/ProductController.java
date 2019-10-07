@@ -1,6 +1,6 @@
 package com.imooc.product.controller;
 
-import com.imooc.product.DTO.CartDTO;
+import com.imooc.product.dto.CartDTO;
 import com.imooc.product.VO.ProductInfoVO;
 import com.imooc.product.VO.ProductVO;
 import com.imooc.product.VO.ResultVO;
