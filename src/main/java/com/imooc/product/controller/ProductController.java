@@ -10,9 +10,7 @@ import com.imooc.product.service.ProductService;
 import com.imooc.product.utils.ResultVOUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,8 +87,9 @@ public class ProductController {
      * @param productIdList
      * @return
      */
-    @GetMapping("/listForOrder")
-    public List<ProductInfo> listForOrder(List<String> productIdList){
+    @PostMapping("/listForOrder")
+    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
+        //@RequestBody 注解必须用 @PostMapping 而不能用@GetMapping（报错405)
         return productService.findList(productIdList);
     }
 }
