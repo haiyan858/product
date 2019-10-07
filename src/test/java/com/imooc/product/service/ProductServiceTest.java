@@ -1,5 +1,6 @@
 package com.imooc.product.service;
 
+import com.imooc.product.DTO.CartDTO;
 import com.imooc.product.ProductApplicationTests;
 import com.imooc.product.dataobject.ProductInfo;
 import org.junit.Assert;
@@ -32,5 +33,11 @@ public class ProductServiceTest extends ProductApplicationTests { //继承，两
     public void findList() {
         List<ProductInfo> list = productService.findList(Arrays.asList("157875196366160022","157875227953464068"));
         Assert.assertTrue(list.size()>0);
+    }
+
+    @Test
+    public void decreaseStock(){
+        CartDTO cartDTO = new CartDTO("157875196366160022", 2);
+        productService.decreaseStock(Arrays.asList(cartDTO));
     }
 }
